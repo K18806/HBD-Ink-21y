@@ -138,16 +138,20 @@
         </div>
     </div>
 
-    <!-- หน้า 3: หน้าเลือกของขวัญ -->
+   <!-- หน้า 3: หน้าเลือกของขวัญ -->
     <div id="screen-3" class="screen">
-        <h2 style="font-size: 12px; color: #FF69B4;">Happy Birthday,<br>My Pokkie!</h2>
+        <h2 style="font-size: 12px; color: #FF69B4;">Happy Birthday,<br>Pokkieee!</h2>
         <p style="font-size: 9px; line-height: 1.4; margin-top: 15px;">Choose Your Gift:</p>
         
         <div class="gift-container">
             <div class="gift-box" onclick="changeScreen('screen-letter')">✉️</div>
             <div class="gift-box" onclick="changeScreen('screen-photos')">🎁</div>
+            <div class="gift-box" onclick="changeScreen('screen-song')">🎵</div>
         </div>
         <p style="font-size: 8px; color: #aaa; margin-top: 20px;">Click an icon to open</p>
+        
+        <!-- เพิ่มปุ่มจบเกมตรงนี้ -->
+        <button class="start-btn" onclick="changeScreen('screen-final')" style="background-color: #ffb6c1; border-color: #ff69b4; margin-top: 40px;">FINISH 💖</button>
     </div>
 
     <!-- หน้า 4: หน้าจดหมายความในใจ -->
@@ -160,7 +164,7 @@
             Yak hai rao grow up pai duay gun, yoo duay gun nan nan loey naaa 💖
         </p>
         <button class="back-btn" onclick="changeScreen('screen-3')">< BACK</button>
-    </div>
+     </div>
 
     <!-- หน้า 5: หน้าอัลบั้มรูปความทรงจำ -->
     <div id="screen-photos" class="screen">
@@ -172,6 +176,30 @@
             <img src="photo4.jpeg" alt="Memory 4">
         </div>
         <button class="back-btn" onclick="changeScreen('screen-3')">< BACK</button>
+    </div>
+
+    <!-- หน้า 6: หน้าเพลงพิเศษ -->
+    <div id="screen-song" class="screen">
+        <h2 style="font-size: 12px; color: #FF69B4;">Song For You</h2>
+        
+        <!-- กล่องสำหรับใส่ YouTube -->
+        <div style="margin: 20px 0; border: 4px solid #FFA6C9; border-radius: 10px; overflow: hidden; background: #fff0f5; padding: 5px;">
+            <!-- โค้ด Embed ที่ปรับขนาดให้พอดีกับหน้าเว็บแล้ว -->
+            <iframe width="100%" height="200" src="https://www.youtube.com/embed/tyCwOPda8fA?si=XulFwF2pVNgll4_h" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        
+        <p style="font-size: 9px; line-height: 1.5; color: #888; margin-top: 15px;">I dedicate this song to you...</p>
+        <button class="back-btn" onclick="changeScreen('screen-3')">< BACK</button>
+    </div>
+            
+    <!-- หน้า 7: หน้าสุดท้าย -->
+    <div id="screen-final" class="screen">
+        <div style="font-size: 40px; margin: 20px 0;">🌷</div>
+        <h2 style="font-size: 12px; color: #FF69B4; line-height: 1.8;">Hope you love<br>all the gifts!</h2>
+        <p style="font-size: 10px; color: #888; margin-top: 15px;">Enjoy your birthday na kub.</p>
+        
+        <!-- ปุ่มวนกลับไปหน้าแรกสุด -->
+        <button class="start-btn" onclick="restartGame()">BACK TO START</button>
     </div>
 
     <script>
@@ -214,6 +242,11 @@
                 document.getElementById('error-msg').innerText = "Wrong password! Try again.";
                 setTimeout(clearPassword, 800);
             }
+        }
+        
+        function restartGame() {
+            clearPassword(); // ล้างรหัสผ่านที่เคยพิมพ์ไว้
+            changeScreen('screen-1'); // เด้งกลับไปหน้าแรกสุด
         }
     </script>
 </body>
