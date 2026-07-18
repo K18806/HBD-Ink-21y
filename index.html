@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday Love!</title>
+    <!-- โหลดฟอนต์ Pixel จาก Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Press Start 2P', cursive;
-            background-color: #FFD1DC; /* สีชมพูพาสเทล */
+            background-color: #FFD1DC;
             color: #333;
             text-align: center;
             margin: 0;
@@ -49,7 +50,6 @@
             margin-top: 30px;
             width: 100%;
         }
-        /* Layout ปุ่มกดรหัสผ่าน */
         .numpad {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -63,7 +63,6 @@
             color: #FF69B4;
             min-height: 30px;
         }
-        /* ส่วนของขวัญ 3 กล่อง */
         .gift-container {
             display: flex;
             justify-content: space-around;
@@ -77,7 +76,6 @@
         .gift-box:hover {
             transform: scale(1.2);
         }
-        /* ส่วนอัลบั้มรูป */
         .gallery {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -102,13 +100,16 @@
 </head>
 <body>
 
+    <!-- หน้า 1: หน้าต้อนรับ -->
     <div id="screen-1" class="screen active">
-        <h2 style="font-size: 16px; line-height: 1.6; color: #FF69B4;">girlfriended so hard i made this for him</h2>
-        <div style="font-size: 40px; margin: 20px 0;">🌸</div>
+        <!-- เปลี่ยนเป็นคำว่า boyfriended สำหรับผู้ชายทำให้แฟน -->
+        <h2 style="font-size: 14px; line-height: 1.6; color: #FF69B4;">boyfriended so hard i made this for her</h2>
+        <div style="font-size: 40px; margin: 20px 0;">🌷</div>
         <h3 style="font-size: 12px; line-height: 1.5;">Enjoy your<br>birthday!!!!</h3>
         <button class="start-btn" onclick="changeScreen('screen-2')">START</button>
     </div>
 
+    <!-- หน้า 2: หน้าใส่รหัสผ่าน -->
     <div id="screen-2" class="screen">
         <h2 style="font-size: 12px; color: #FF69B4;">Guess the password</h2>
         <div class="password-display" id="pwd-display"></div>
@@ -130,6 +131,7 @@
         </div>
     </div>
 
+    <!-- หน้า 3: หน้าเลือกของขวัญ -->
     <div id="screen-3" class="screen">
         <h2 style="font-size: 12px; color: #FF69B4;">Happy Birthday,<br>Love!</h2>
         <p style="font-size: 9px; line-height: 1.4; margin-top: 15px;">Choose Your Gift:</p>
@@ -141,14 +143,17 @@
         <p style="font-size: 8px; color: #aaa; margin-top: 20px;">Click an icon to open</p>
     </div>
 
+    <!-- หน้า 4: หน้าจดหมายความในใจ -->
     <div id="screen-letter" class="screen">
         <h2 style="font-size: 12px; color: #FF69B4;">A Letter For You</h2>
+        <!-- ปรับข้อความให้อ่านแล้วเป็นผู้ชายส่งให้แฟน -->
         <p style="font-size: 9px; line-height: 1.8; text-align: left; background: #fff0f5; padding: 15px; border-radius: 8px; border: 2px dashed #FF8EBA;">
-            สุขสันต์วันเกิดอายุครบ 21 ปีนะครับคนดี! ขอให้มีความสุขมากๆ ยิ้มเยอะๆ ในทุกๆ วัน ดีใจที่มีเธอเข้ามาในชีวิตนะ ขอบคุณสำหรับทุกช่วงเวลาที่ผ่านมา อยู่เติบโตและมีความสุขไปด้วยกันแบบนี้ไปนานๆ เลยนะ รักเธอที่สุดครับ รักนะจุ๊บๆ 💕
+            สุขสันต์วันเกิดอายุครบ 21 ปีนะครับที่รัก! หวังว่าจะชอบของขวัญชิ้นนี้นะ ตั้งใจทำมาให้เลย ดอกทิวลิปกับลิลลี่ที่เค้าว่าสวยๆ ก็ยังสู้ความน่ารักของเธอไม่ได้อยู่ดี ขอบคุณสำหรับทุกความทรงจำดีๆ ที่ผ่านมาด้วยกันนะ โดยเฉพาะตอนทริปเกาะสีชังของเรา เป็นช่วงเวลาที่พิเศษมากๆ อยู่เป็นรอยยิ้มให้กันแบบนี้ไปนานๆ นะ รักเธอที่สุดเลยครับ 💕
         </p>
         <button class="back-btn" onclick="changeScreen('screen-3')">< BACK</button>
     </div>
 
+    <!-- หน้า 5: หน้าอัลบั้มรูปความทรงจำ -->
     <div id="screen-photos" class="screen">
         <h2 style="font-size: 12px; color: #FF69B4;">Our Memories</h2>
         <div class="gallery">
@@ -162,7 +167,8 @@
 
     <script>
         let currentPassword = "";
-        const targetPassword = "1907"; // เปลี่ยนรหัสผ่านตรงนี้ได้ตามต้องการครับ
+        // รหัสผ่านคือ 1907 
+        const targetPassword = "1907"; 
 
         function changeScreen(targetId) {
             document.querySelectorAll('.screen').forEach(screen => {
